@@ -13,3 +13,6 @@ search for missing .sty?
 ```bash
 sudo pacman -Fy <filename>
 ```
+latex script from
+--
+`https://github.com/xu-cheng/latex-action/blob/master/entrypoint.sh`
