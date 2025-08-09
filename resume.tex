@@ -1,1 +1,169 @@
-/home/siddharth/.gitbackup/resume.tex
+%-------------------------
+% Resume in Latex
+% Author : Siddharth Kumar Jha 
+% License: MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks,colorlinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+\usepackage{charter}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\hypersetup{%
+     colorlinks=true,
+     linkcolor=blue,
+     filecolor=blue,
+     citecolor=black,      
+     urlcolor=teal,
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+
+\begin{center}
+	\textbf{\Huge \scshape Siddharth Kumar Jha} \\ \vspace{1pt}
+	\href{mailto:siddharth.k.jha@proton.me}{\underline{siddharth.k.jha@proton.me}} $|$ 
+	\href{https://linkedin.com/in/siddharth-kumar-jha-kiit}{\underline{LinkedIn.com/in/siddharth-kumar-jha-kiit}} $|$
+	\href{https://github.com/siddharthkumarjha}{\underline{Github.com/siddharthkumarjha}} \\
+	+91 6265080547 $|$ Bhopal, Madhya Pradesh
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{\textbf{HARMAN International India Pvt. Ltd.}}{Bangalore}
+{Associate Engineer – Embedded C++}{Jul 2024 -- Present}
+\resumeItemListStart
+\resumeItem{Rescued an escalated \textbf{Tier-1 OEM} project by redesigning \textbf{diagnostic recorder} and extending \textbf{CAN Data Sampler} to meet strict \textbf{real-time data collection} requirements—despite hardware constraints preventing true real-time streaming.}
+\resumeItem{Led daily technical discussions with \textbf{OEM engineers} to clarify requirements and iterated solutions, delivering a robust workaround that satisfied the customer and passed \textbf{acceptance testing}.}
+\resumeItem{Engineered a hybrid sampling logic to collect \textbf{CAN data} with accurate \textbf{timestamps} and \textbf{validity checks} from filtered \textbf{shared memory}, ensuring \textbf{80+ hour diagnostic data retention} and reliable fault detection.}
+\resumeItem{Eliminated \textbf{scheduler drift} in \textbf{CAN/Lua pipeline} that was corrupting long-run OEM scripts, restoring multi-hour data integrity.}
+\resumeItem{Reduced \textbf{gRPC} CPU usage from \textbf{30\% to 5\%}, preserving \textbf{TCU} headroom for safety-critical services (e.g., \textbf{E-call}) and avoiding scope reduction.}
+\resumeItem{Developed reusable \textbf{HTTP/2 + mTLS} \textbf{C++17} library with \textbf{eSIM-based certificate retrieval}, cutting secure comms development time across projects.}
+\resumeItemListEnd
+
+\resumeSubheading
+{\textbf{HARMAN International India Pvt. Ltd.}}{Bangalore}
+{Intern – Embedded C++ Developer}{Dec 2023 -- Jun 2024}
+\resumeItemListStart
+\resumeItem{Designed and implemented core \textbf{CAN Data Sampler} with multiple collection modes (simple, change-point, hybrid) and sub-second shared memory IPC, forming the backbone of production diagnostics.}
+\resumeItem{Created \textbf{Lua-based runtime scheduler} enabling configurable data processing without firmware redeploy.}
+\resumeItem{Implemented \textbf{gRPC} streaming from shared memory buffers for near-real-time diagnostics with minimal CPU overhead.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Open Source Contributions}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{\href{https://github.com/starship/starship}{starship}} – Cross-shell prompt (50k+ stars)}{Aug 2025}
+\resumeItemListStart
+\resumeItem{Implemented C++ project detection in Rust, merged in v1.23.0 (\href{https://github.com/starship/starship/pull/6570}{PR \#6570}).}
+\resumeItem{Fixed Rust 1.89.0 lifetime elision warnings breaking CI builds and resolved test stalls caused by interactive GPG prompts, restoring reliable CI for all contributors (\href{https://github.com/starship/starship/pull/6887}{PR \#6887}).}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{\href{https://github.com/tock/tock}{Tock OS}} – Rust-based embedded OS (5k+ stars)}{Dec 2024}
+\resumeItemListStart
+\resumeItem{Fixed documentation errors, improving developer onboarding (\href{https://github.com/tock/tock/pulls?q=is\%3Apr+author\%3Asiddharthkumarjha}{PRs}).}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{\href{https://github.com/AdnanHodzic/auto-cpufreq}{auto-cpufreq}} – Linux CPU power manager (6k+ stars)}{May 2023}
+\resumeItemListStart
+\resumeItem{Fixed Arch Linux auto-start issues and updated documentation (\href{https://github.com/AdnanHodzic/auto-cpufreq/releases/tag/v1.9.8}{v1.9.8}).}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+	\small{\item{
+		\textbf{Languages}{: C, C++17, Lua, Bash, Rust} \\
+		\textbf{Tools}{: GDB, CMake, Git, Codesonar, SQLite} \\
+		\textbf{Embedded}{: ARMv7l, SHM, IPC, CAN, RTOS concepts, Telux API} \\
+		\textbf{Protocols}{: gRPC, HTTP/2, MQTT, mTLS} \\
+		\textbf{Libraries}{: libcurl}
+	}}
+\end{itemize}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Kalinga Institute of Industrial Technology}{Bhubaneshwar, Odisha}
+{B.Tech in Computer Science and Engineering}{Jul 2020 -- May 2024}
+\resumeSubHeadingListEnd
+
+\end{document}
