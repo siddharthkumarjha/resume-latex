@@ -17,7 +17,7 @@ error() {
 }
 
 # git config --system --add safe.directory ~/project/latex/
-INPUT_ROOT_FILE="/home/siddharth/project/latex/resume.tex"
+INPUT_ROOT_FILE="${PWD}/resume.tex"
 
 if [[ -z "$INPUT_ROOT_FILE" ]]; then
   error "Input 'root_file' is missing."
